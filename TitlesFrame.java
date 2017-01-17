@@ -1,31 +1,31 @@
 /*
- * Декомпилированы с ЧФР 0_118.
+ * Decompiled with CFR 0_118.
  */
-импорт ява.авт.Компонентов;
-импорт пакета javax.качели.Форму;
-импорт пакета javax.качели.Метода swingutilities;
+import java.awt.Component;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
-общественный класс TitlesFrame
-расширяет форму jframe {
-    общественные TitlesFrame() {
-        это.initUI();
+public class TitlesFrame
+extends JFrame {
+    public TitlesFrame() {
+        this.initUI();
     }
 
-    частный аннулировать initUI() {
-        это.setTitle("\u041a\u0440\u0438\u0432\u044b\u0435 \u0444\u0438\u0433\u0443\u0440\u044b");
-        это.setDefaultCloseOperation(3);
-        это.добавить(новый TitlesPanel(78));
-        это.метод setsize(350, 350);
-        это.setLocationRelativeTo(значение NULL);
+    private void initUI() {
+        this.setTitle("\u041a\u0440\u0438\u0432\u044b\u0435 \u0444\u0438\u0433\u0443\u0440\u044b");
+        this.setDefaultCloseOperation(3);
+        this.add(new TitlesPanel(78));
+        this.setSize(350, 350);
+        this.setLocationRelativeTo(null);
     }
 
-    публичный статический пустота главный(строка[] аргументы) {
-        метода swingutilities.invokeLater(новый интерфейс runnable(){
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable(){
 
-            @Переопределить
-            публичного недействительными запустить() {
-                TitlesFrame ПС = новый TitlesFrame();
- ПС.функцию setvisible(истина);
+            @Override
+            public void run() {
+                TitlesFrame ps = new TitlesFrame();
+                ps.setVisible(true);
             }
         });
     }
